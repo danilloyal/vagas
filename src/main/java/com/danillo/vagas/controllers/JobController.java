@@ -4,7 +4,6 @@ import com.danillo.vagas.dto.JobDTO;
 import com.danillo.vagas.models.job.Job;
 import com.danillo.vagas.services.JobService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/job")
+@RequestMapping("/company/job")
 @RequiredArgsConstructor
 public class JobController {
 
