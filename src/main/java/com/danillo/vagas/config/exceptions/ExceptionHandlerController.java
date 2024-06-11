@@ -2,6 +2,7 @@ package com.danillo.vagas.config.exceptions;
 
 import com.danillo.vagas.models.candidate.exceptions.UserAlreadyExistsException;
 import com.danillo.vagas.models.candidate.exceptions.UserNotFoundException;
+import com.danillo.vagas.models.company.exceptions.CompanyNotFoundException;
 import com.danillo.vagas.models.company.exceptions.CredentialNotFoundException;
 import com.danillo.vagas.models.job.exceptions.JobNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -37,4 +38,9 @@ public class ExceptionHandlerController {
     public ResponseEntity<String> handleJobNotFoundException(JobNotFoundException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+    @ExceptionHandler(CompanyNotFoundException.class)
+    public ResponseEntity<String> handleCompanyNotFoundException(CompanyNotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
 }
